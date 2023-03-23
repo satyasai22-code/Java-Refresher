@@ -8,6 +8,9 @@ class Quadrilateral {
     public void area() {
        System.out.println("Area of Rectangle is length * breadth");
     }
+    public int area(int l, int b){
+        return l*b;
+    }
  }
 
  class Square extends Quadrilateral {
@@ -18,9 +21,10 @@ class Quadrilateral {
  }
  public class InheritanceAndPolyMorphism {
     public static void main(String[] arguments) {
-        Quadrilateral rectangle = new Rectangle();
-        Quadrilateral square = new Square();
+        Rectangle rectangle = new Rectangle();
+        Square square = new Square();
         rectangle.area();
+        System.out.println(rectangle.area(2, 4));
         square.area();
      }
 }
