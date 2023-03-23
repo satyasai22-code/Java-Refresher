@@ -18,6 +18,9 @@ class Quadrilateral {
     public void area() {
         System.out.println("Area of Square is side * side");
     }
+    public int area(int l){
+        return l*l;
+    }
  }
  public class InheritanceAndPolyMorphism {
     public static void main(String[] arguments) {
@@ -25,6 +28,7 @@ class Quadrilateral {
         Square square = new Square();
         rectangle.area();
         System.out.println(rectangle.area(2, 4));
+        System.out.println(square.area(2));
         square.area();
      }
 }
