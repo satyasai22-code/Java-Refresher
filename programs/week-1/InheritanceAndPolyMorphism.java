@@ -28,7 +28,7 @@ class Quadrilateral {
         Square square = new Square();
         rectangle.area();
         System.out.println(rectangle.area(2, 4));
-        System.out.println(square.area(2));
         square.area();
+        System.out.println(square.area(2));
      }
 }
