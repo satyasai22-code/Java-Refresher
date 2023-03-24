@@ -14,11 +14,14 @@ class Parent{
 class Child extends Parent{
     //variable hiding
     static int count;
+    int y;
     static{
         count = 2;
     }
     //method hiding
     static int add(int a, int b){
+        int x = 1; //Valid
+        // x += y ; //Invalid as y is non - static and non - local
         return a + b + 1;
     }
 }
