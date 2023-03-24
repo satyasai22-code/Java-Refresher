@@ -5,6 +5,9 @@ class Parent{
     static{
         count = 1;
     }
+    Parent(){
+        // this.count = 1;//Invalid as count is static
+    }
     //static method to access without object creation
     static int add(int a, int b){
         return a + b;
