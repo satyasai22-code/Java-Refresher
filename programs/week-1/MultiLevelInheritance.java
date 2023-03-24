@@ -22,6 +22,11 @@ class Shape {
  public class MultiLevelInheritance {
     public static void main(String[] arguments) {
        Cube cube = new Cube();
+       Rectangle cb =  new Cube();
+       cb.display();
+       cb.length();
+       cb.area();
+       //cb.volume();//Error
        cube.display();
        cube.length();
        cube.area();

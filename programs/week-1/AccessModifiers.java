@@ -18,12 +18,13 @@ class SubData extends Data{
         return super.getClassName();
     }
 }
-
 public class AccessModifiers {
     public static void main(String[] main){
         Data d = new Data();
+        d.getClassName();
         d.setName("Satya");
         System.out.println(d.getName());
+        System.out.println(d.getClassName());
         SubData subData = new SubData();
         System.out.println(subData.getClassName());
     }
