@@ -19,7 +19,7 @@ class Constructor{
     public Constructor(Constructor constructor){
         this(constructor.getCount(), constructor.getName());
     }
-        public int getCount() {
+    public int getCount() {
         return count;
     }
     public void setCount(int count) {
