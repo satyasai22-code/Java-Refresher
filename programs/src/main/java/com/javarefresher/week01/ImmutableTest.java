@@ -1,3 +1,5 @@
+package com.javarefresher.week01;
+
 //Must be final to be immutable
 final class ImmutableClass {
     //Must be private and final

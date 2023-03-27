@@ -1,3 +1,4 @@
+package com.javarefresher.week01;
 class Data {
     private String name;
 

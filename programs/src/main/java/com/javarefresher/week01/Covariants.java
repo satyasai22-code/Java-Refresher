@@ -1,3 +1,4 @@
+package com.javarefresher.week01;
 class A{
 }
 class B extends A{

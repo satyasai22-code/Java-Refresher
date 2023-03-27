@@ -1,3 +1,4 @@
+package com.javarefresher.week01;
 class Shape {
     public void display() {
        System.out.println("Inside display");

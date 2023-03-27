@@ -1,3 +1,4 @@
+package com.javarefresher.week01;
 import java.util.Scanner;
 
 enum PerformanceType{

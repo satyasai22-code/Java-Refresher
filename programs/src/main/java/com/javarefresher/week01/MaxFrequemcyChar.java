@@ -1,3 +1,4 @@
+package com.javarefresher.week01;
 public class MaxFrequemcyChar {
     static int getIndexOfChar(char ch){
         return ch - 97;
