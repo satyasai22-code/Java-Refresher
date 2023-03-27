@@ -13,6 +13,12 @@ class Parent{
     static int add(int a, int b){
         return a + b;
     }
+
+    public static class NestedStaticClass {
+        public void printCount(){
+            System.out.print("Count: " + count);
+        }
+    }
 }
 
 class Child extends Parent{
@@ -53,5 +59,8 @@ public class Static {
         System.out.println("Parent as reference and Object add: " + p.add(1, 2));
         System.out.println("Child as reference and Object add: " + c.add(1, 2));
         System.out.println("Parent as reference and child as Object add: " + Parent.add(1, 2));
+
+        Parent.NestedStaticClass nestedStaticClass = new Parent.NestedStaticClass();
+        nestedStaticClass.printCount();
     }
 }
