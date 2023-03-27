@@ -8,6 +8,9 @@ public class MaxFrequemcyChar {
     static char getMaxOccurringChar(String s) throws InvalidAlphaCharException
     {
         try {
+            if(s == null || s.equals("")){
+                throw new InvalidStringException("String can't be empty or null");
+            }
             int count[] = new int[CHAR_COUNT_SIZE];
             int len = s.length();
             for (int i = 0; i < len; i++){
