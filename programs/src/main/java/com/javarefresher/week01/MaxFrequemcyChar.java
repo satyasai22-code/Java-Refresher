@@ -37,6 +37,9 @@ public class MaxFrequemcyChar {
         }catch(InvalidAlphaCharException e){
             System.out.println(e.getMessage());
         } 
+        catch(InvalidStringException e){
+            System.out.println(e.getMessage());
+        }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
