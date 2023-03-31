@@ -1,13 +1,13 @@
-package com.javarefresher.week02.LinkedList;
+package com.javarefresher.week02.LinkedList02;
 
 /**
  * LinkedList
  */
-class CustomLinkedList {
+class CustomLinkedList<E> {
     class Node{
-        int key;
+        E key;
         Node next;
-        public Node(int key){
+        public Node(E key){
             this.key = key;
             this.next = null;
         }
@@ -17,7 +17,7 @@ class CustomLinkedList {
         this.head = null;
     }
 
-    public void add(int key){
+    public void add(E key){
         Node temp = new Node(key);  
         if(head == null){
             head = temp;
@@ -37,7 +37,7 @@ class CustomLinkedList {
         }
         System.out.println();
     }
-    public void delete(int key){
+    public void delete(E key){
         if(head!=null && head.key == key){
             Node temp = head.next;
             head.next = null;
