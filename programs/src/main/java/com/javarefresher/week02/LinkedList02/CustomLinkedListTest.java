@@ -1,8 +1,5 @@
 package com.javarefresher.week02.LinkedList02;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 public class CustomLinkedListTest {
     public static void main(String[] args) {
         CustomLinkedList<Integer> linkedList = new CustomLinkedList<Integer>();
@@ -20,9 +17,5 @@ public class CustomLinkedListTest {
         linkedList.printAll();
         linkedList.delete(2);
         linkedList.printAll();
-        
-        LinkedList<String> linkedlist = new LinkedList<>();
-
-        Iterator<String> listIterator = linkedlist.descendingIterator();
     }
 }
