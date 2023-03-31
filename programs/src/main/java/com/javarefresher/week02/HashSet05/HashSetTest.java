@@ -10,7 +10,7 @@ public class HashSetTest {
         HashSet<Integer> set2 = new HashSet<Integer>(Arrays.asList(1, 2, 3, 4, 1));
  
         System.out.println(set1.equals(set2));
-
+        System.out.println(set1 == set2);
         set1.add(5);
         set2.add(5);
 
