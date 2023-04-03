@@ -23,6 +23,7 @@ public class ArrayListTest {
         System.out.println(arrayList);
         arrayList.remove(0);
         System.out.println("0-th index after removing: " + arrayList.get(0));
+        arrayList.removeAll(Arrays.asList(10, 9));
         System.out.println(arrayList);
     }
 }
