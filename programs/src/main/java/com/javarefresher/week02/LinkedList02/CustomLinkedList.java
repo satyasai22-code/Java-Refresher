@@ -11,6 +11,13 @@ class CustomLinkedList<E> {
             this.key = key;
             this.next = null;
         }
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node that = (Node) o;
+            return key.equals(that.key);
+        }
     }
     Node head ;
     public CustomLinkedList(){
@@ -38,7 +45,7 @@ class CustomLinkedList<E> {
         System.out.println();
     }
     public void delete(E key){
-        if(head!=null && head.key == key){
+        if(head!=null && head.key.equals(key)){
             Node temp = head.next;
             head.next = null;
             head = temp;
@@ -46,7 +53,7 @@ class CustomLinkedList<E> {
         }
         Node tempHead = head;
         while(tempHead !=null && tempHead.next != null){
-            if(tempHead.next.key == key){
+            if(tempHead.next.key.equals(key)){
                 Node temp = tempHead.next.next;
                 tempHead.next.next = null;
                 tempHead.next = temp;

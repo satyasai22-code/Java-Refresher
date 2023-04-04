@@ -12,7 +12,6 @@ public class ArrayListTest {
         arrayList.add(2);
         arrayList.add(3);
         arrayList.addAll(Arrays.asList(4, 5, 6, 7));
-
         System.out.println("Size: " + arrayList.size());
 
         arrayList.addAll(1, Arrays.asList(8, 9, 10, 11));
