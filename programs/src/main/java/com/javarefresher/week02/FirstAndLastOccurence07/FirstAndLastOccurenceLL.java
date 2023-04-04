@@ -1,4 +1,4 @@
-package com.javarefresher.week02.FirstAndLastOccurence;
+package com.javarefresher.week02.FirstAndLastOccurence07;
 
 import java.util.Iterator;
 import java.util.LinkedList;
