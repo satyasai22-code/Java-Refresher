@@ -6,8 +6,6 @@ import java.util.LinkedList;
 import com.javarefresher.week02.Person;
 
 public class FirstAndLastOccurenceLL {
-
-
     public static void firstAndLastOccurence(LinkedList<Person> linkedList, Person person){
         Iterator<Person> iterator = linkedList.iterator();
         int lastOccurence = -1, firstOccurence = -1, iterationCount = 0;
