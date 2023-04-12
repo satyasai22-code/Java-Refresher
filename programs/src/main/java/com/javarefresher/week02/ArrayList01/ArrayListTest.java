@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+ 
+// A program to retrive , add, delete from ArrayList 
+
 public class ArrayListTest {
     public static void main(String[] args) {
         List<Integer> arrayList = new ArrayList<Integer>();
