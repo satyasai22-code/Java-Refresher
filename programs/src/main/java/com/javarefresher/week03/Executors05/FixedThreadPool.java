@@ -33,7 +33,6 @@ public class FixedThreadPool {
             = Executors.newFixedThreadPool(4);
         Future<String> result
             = executorService.submit(task);
- 
         try {
             System.out.println(result.get());
         }
@@ -47,7 +46,7 @@ public class FixedThreadPool {
  
             e.printStackTrace();
         }
- 
+
         executorService.shutdown();
     }
 }
