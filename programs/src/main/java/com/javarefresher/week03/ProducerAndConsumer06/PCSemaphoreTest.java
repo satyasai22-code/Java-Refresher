@@ -2,7 +2,7 @@ package com.javarefresher.week03.ProducerAndConsumer06;
 
 import java.util.concurrent.Semaphore;
 
-public class ProducerAndConsumerUsingSemaphore {
+class PCSemaphore {
     // an item
     int item;
   
@@ -56,8 +56,8 @@ public class ProducerAndConsumerUsingSemaphore {
   
 // Producer class
 class Producer implements Runnable {
-    ProducerAndConsumerUsingSemaphore q;
-    Producer(ProducerAndConsumerUsingSemaphore q)
+    PCSemaphore q;
+    Producer(PCSemaphore q)
     {
         this.q = q;
         new Thread(this, "Producer").start();
@@ -73,8 +73,8 @@ class Producer implements Runnable {
   
 // Consumer class
 class Consumer implements Runnable {
-    ProducerAndConsumerUsingSemaphore q;
-    Consumer(ProducerAndConsumerUsingSemaphore q)
+    PCSemaphore q;
+    Consumer(PCSemaphore q)
     {
         this.q = q;
         new Thread(this, "Consumer").start();
@@ -89,16 +89,12 @@ class Consumer implements Runnable {
 }
   
 // Driver class
-class PC {
+public class PCSemaphoreTest {
     public static void main(String args[])
     {
-        // creating buffer queue
-        ProducerAndConsumerUsingSemaphore q = new ProducerAndConsumerUsingSemaphore();
-  
-        // starting consumer thread
+
+        PCSemaphore q = new PCSemaphore();
         new Consumer(q);
-  
-        // starting producer thread
         new Producer(q);
     }
 }

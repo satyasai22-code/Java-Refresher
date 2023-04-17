@@ -27,9 +27,6 @@ public class SchdulerService {
                                TimeUnit.SECONDS);
         }
   
-        // remember to shutdown the scheduler
-        // so that it no longer accepts
-          // any new tasks
         scheduler.shutdown();
     }
 }
