@@ -1,6 +1,5 @@
 package com.javarefresher.week04;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,7 +23,7 @@ public class Question030406 {
                 new Employee(8, "Aryan" , 950)
         );
 
-        List<Employee> emptyList = null;
+        // List<Employee> emptyList = null;
         // Question - 03
         // Sort Based on Salary
 

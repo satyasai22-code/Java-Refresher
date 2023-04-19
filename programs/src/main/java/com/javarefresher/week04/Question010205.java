@@ -15,18 +15,21 @@ public class Question010205 {
 
         // Question - 01
         // Print even Numbers
+        System.out.println("----------Print Even Numbers--------------");
         numbers.stream()
         .filter(value -> value % 2 == 0)
         .forEach(System.out::println);
 
         //Question - 02
         //Print Duplicate numbers
+        System.out.println("----------Print Duplicate Numbers--------------");
         numbers.stream().filter(i -> Collections.frequency(numbers, i) >1)
-                .collect(Collectors.toSet()).forEach(System.out::println);
+        .collect(Collectors.toSet())
+        .forEach(System.out::println);
 
         //Question - 05
         //Find Maximum Number in the given list
-
+        System.out.println("----------Print Maximum Numbers--------------");
         OptionalInt maxUsingOptionalInt = numbers.stream().mapToInt(Integer::intValue).max(); //Converting to IntStream
         Optional<Integer> maxUsingReduce = numbers.stream().reduce(Integer::max); //Using Reduce method
 
