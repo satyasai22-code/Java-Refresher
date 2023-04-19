@@ -102,7 +102,7 @@ public class StreamsDemoUsingTraderTransaction {
         .stream()
         .map((transaction) -> transaction.getValue())
         .reduce(Math::max);
-        System.out.println(maxTransactionValue.get());
+        System.out.println(maxTransactionValue.isPresent()? maxTransactionValue.get():"List is Empty");
 
         // 8. Find the transaction with the smallest value
         System.out.println("-----------Minimum Transaction Value -----------");
