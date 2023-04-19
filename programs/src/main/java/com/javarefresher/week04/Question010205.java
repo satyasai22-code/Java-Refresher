@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 // Program to Print Even Numbers, Duplicates and maximum number in the given list
 
-public class Question0102 {
+public class Question010205 {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10);
 
@@ -29,7 +29,11 @@ public class Question0102 {
 
         OptionalInt maxUsingOptionalInt = numbers.stream().mapToInt(Integer::intValue).max(); //Converting to IntStream
         Optional<Integer> maxUsingReduce = numbers.stream().reduce(Integer::max); //Using Reduce method
-        
+
         System.out.println(maxUsingOptionalInt.getAsInt() + " " + maxUsingReduce.get()) ;
+
+
+
+
     }
 }
