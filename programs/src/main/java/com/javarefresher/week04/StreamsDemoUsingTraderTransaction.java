@@ -61,6 +61,8 @@ public class StreamsDemoUsingTraderTransaction {
         .stream()
         .filter((transaction) -> transaction.getTrader().getCity().equals("Cambridge"))
         .map(transaction -> transaction.getTrader())
+        .collect(Collectors.toSet())
+        .stream()
         .sorted((i1, i2) -> i1.getName().compareTo(i2.getName()))
         .forEach(System.out::println);
 
