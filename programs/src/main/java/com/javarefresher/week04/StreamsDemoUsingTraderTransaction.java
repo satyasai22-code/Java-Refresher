@@ -1,17 +1,60 @@
 package com.javarefresher.week04;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+
+
+class TransactionValueComparator implements Comparator<Transaction> {
+    @Override
+    public int compare(Transaction firstTransaction,Transaction secondTransaction) {
+       return firstTransaction.getValue().compareTo(secondTransaction.getValue());
+    }
+}
+
+
+
 public class StreamsDemoUsingTraderTransaction {
+
+    public static <T> Consumer<T> print(){
+        Consumer<T> printStatement = new Consumer<T>() {
+            @Override
+            public void accept(T object){
+                System.out.println(object);
+            }
+        };    
+        return printStatement;   
+    }
+
     public static void main(String[] args) {
         Trader raoul = new Trader("Raoul", "Cambridge");
         Trader mario = new Trader("Mario","Milan");
         Trader alan = new Trader("Alan","Cambridge");
         Trader brian = new Trader("Brian","Cambridge");
 
+        Predicate<Transaction> hasYear2011 = new Predicate<Transaction>() {
+            @Override
+            public boolean test(Transaction t)
+            {
+                return t.getYear() ==2011;
+            }
+        };
+
+        Function<Transaction, Trader> getTrader = new Function<Transaction,Trader>() {
+            @Override
+            public Trader apply(Transaction transaction){
+                return transaction.getTrader();
+            }
+        }; 
+        Function<Transaction, Trader> getTraderLambda = (transaction) -> transaction.getTrader();
+        // Comparator<Transaction>
 
         List<Transaction> transactions = Arrays.asList(
                 new Transaction(brian, 2011, 300),
@@ -41,18 +84,19 @@ public class StreamsDemoUsingTraderTransaction {
         System.out.println("-----------Transactions in 2011-----------");
         transactions
         .stream()
-        .filter((transaction) -> transaction.getYear() == 2011)
-        .sorted( (i1, i2) -> i1.getValue().compareTo(i2.getValue()))
-        .forEach((transaction) -> System.out.println(transaction));
+        .filter(hasYear2011)
+        .sorted(new TransactionValueComparator())
+        .forEach(StreamsDemoUsingTraderTransaction.<Transaction>print());
 
         // 2. What are all the unique cities where the traders work?
 
         System.out.println("-----------Unique Cities-----------");
         transactions
         .stream()
-        .map(transcation -> transcation.getTrader()).collect(Collectors.toSet())
-        .stream().map(trader -> trader.getCity()).collect(Collectors.toSet()).forEach(System.out::println);
+        .map(getTrader).collect(Collectors.toSet())
+        .stream().map(trader -> trader.getCity()).collect(Collectors.toSet()).forEach(StreamsDemoUsingTraderTransaction.<String>print());
         
+
         // .collect(Collectors.toSet()).forEach(System.out::println);
 
         // 3. Find all traders from Cambridge and sort them by name.
@@ -60,11 +104,11 @@ public class StreamsDemoUsingTraderTransaction {
         transactions
         .stream()
         .filter((transaction) -> transaction.getTrader().getCity().equals("Cambridge"))
-        .map(transaction -> transaction.getTrader())
+        .map(getTraderLambda)
         .collect(Collectors.toSet())
         .stream()
         .sorted((i1, i2) -> i1.getName().compareTo(i2.getName()))
-        .forEach(System.out::println);
+        .forEach(StreamsDemoUsingTraderTransaction.<Trader>print());
 
         // 4. Return a string of all traders’ names sorted alphabetically.
         System.out.println("-----------All Trader names -----------");
@@ -94,7 +138,7 @@ public class StreamsDemoUsingTraderTransaction {
         .stream()
         .filter((transaction) -> transaction.getTrader().getCity().equals("Cambridge"))
         .map((transaction) -> transaction.getValue())
-        .forEach(System.out::println);
+        .forEach(print());
 
         // 7. What’s the highest value of all the transactions?
         System.out.println("-----------Maximum Transaction Value -----------");
