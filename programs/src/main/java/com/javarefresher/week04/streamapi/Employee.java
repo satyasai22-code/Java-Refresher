@@ -1,4 +1,4 @@
-package com.javarefresher.week04;
+package com.javarefresher.week04.streamapi;
 
 public class Employee {
     private int id;

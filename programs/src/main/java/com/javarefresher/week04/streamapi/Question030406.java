@@ -1,4 +1,4 @@
-package com.javarefresher.week04;
+package com.javarefresher.week04.streamapi;
 
 import java.util.Arrays;
 import java.util.Collections;
