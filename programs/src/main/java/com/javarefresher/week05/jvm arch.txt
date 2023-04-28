@@ -1,0 +1,28 @@
+try JVisual- visualizing execution of a program in the jvm
+JVM Architecture
+steps involve in execution
+diff types of class loaders-- diff class loaders for diff applications
+3 steps in class loader- loading, linking,initialization
+bootstrap class loader
+extension class loader
+application class loader
+Memory-------------
+Memory area- runtime data area  //known as "permgen" before java 8(we need to pass the space value manually),
+						after 8 its called "metaspace" which is auto-resizable.
+method area- class fields, constructors
+heap- objects
+stack- local variables in a method, LIFO order, will have multiple thread
+stacks as well
+pc register- program counter-> for jvm
+native method stack- os level (embedded coding)
+Execution------------
+Execution Engine->
+Interpreter- gives the bytecode
+JIT Compiler- reuses the already converted bytecodes
+GC- unreferenced objects are removed by Garbage collector, has diff memory
+areas
+n generation-> new/in-use objects //"minor gc" threads runs here 
+old generation-> unreferenced objects //if some objects are still left in n-gen, they are shifted to old-gen and then "major gc" runs to clean them up
+n-gen   -> hidden space
+	-> survivor space
+types of Garbage collectors- serial, parallel, CMS, g1gc, zgc
