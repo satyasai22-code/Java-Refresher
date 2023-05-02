@@ -1,6 +1,6 @@
 package com.javarefresher.week05.designpatterns.creationaldesignpatterns.builderpattern;
 
-public class BuilderPattern {
+public class BuilderPatternTest {
     public static void main(String[] args) {
         Student student = Student.Builder.newInstance()
         .setId(1)
