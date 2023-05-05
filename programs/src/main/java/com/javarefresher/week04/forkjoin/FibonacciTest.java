@@ -1,7 +1,6 @@
 package com.javarefresher.week04.forkjoin;
 
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveAction;
 
 // fork and join program to find the Fibonacci number by using recursive loop - RecursiveAction
@@ -27,7 +26,7 @@ class Fibonacci extends RecursiveAction{
         } else {
             Fibonacci f1 = new Fibonacci(n - 1);
             Fibonacci f2 = new Fibonacci(n - 2);
-                        ForkJoinTask.invokeAll(f1, f2);
+                        // ForkJoinTask.invokeAll(f1, f2);
             f1.fork();
             f2.fork();
             f1.join();

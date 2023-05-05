@@ -34,8 +34,8 @@ class ForkJoinAdd extends RecursiveTask<Long> {
         firstTask.fork(); 
         secondTask.fork();
         return firstTask.join() + secondTask.join();
-
-    }
+    
+    } 
 
     private long add() {
         long result = 0;

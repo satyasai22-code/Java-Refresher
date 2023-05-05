@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Question030406 {
     public static void main(String[] args) {
-        
+
         List<Employee> employees = Arrays.asList(
                 new Employee(1, "Satya", 300),
                 new Employee(2, "Sai" , 1000),

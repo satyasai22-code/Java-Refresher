@@ -1,11 +1,11 @@
 package com.javarefresher.week01;
 public class MaxFrequemcyChar {
-    static int getIndexOfChar(char ch){
+    static int getIndexOfChar(Character ch){
         return ch - 97;
     }
     static int CHAR_COUNT_SIZE = 26;
     // Only small case enlgish letters are allowed
-    static char getMaxOccurringChar(String s) throws InvalidAlphaCharException
+    static Character getMaxOccurringChar(String s) throws InvalidAlphaCharException
     {
         try {
             if(s == null || s.equals("")){
@@ -14,7 +14,7 @@ public class MaxFrequemcyChar {
             int count[] = new int[CHAR_COUNT_SIZE];
             int len = s.length();
             for (int i = 0; i < len; i++){
-                char ch = s.charAt(i);
+                Character ch = s.charAt(i);
                 if(ch>=65 && ch<=90){
                     throw new InvalidAlphaCharException(ch + " is not an small case letter");
                 }
@@ -26,7 +26,7 @@ public class MaxFrequemcyChar {
             }
      
             int max = 0;
-            char result = ' '; 
+            Character result = ' '; 
             for (int i = 0; i < len; i++) {
                 if (max < count[getIndexOfChar(s.charAt(i))]) {
                     max = count[getIndexOfChar(s.charAt(i))];
